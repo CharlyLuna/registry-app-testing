@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FormField } from "./components/FormField";
 import { useFormValidate } from "./hooks/useFormValidate";
+import { useRegisterStudent } from "./hooks/useRegisterStudent";
 
 const initialValue = {
   name: "",
@@ -14,6 +15,7 @@ function App() {
   const [form, setForm] = useState(initialValue);
 
   const { error, success } = useFormValidate(form);
+  const { handleRegisterStudent } = useRegisterStudent();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,6 +24,7 @@ function App() {
       alert(error);
     } else {
       alert("all good");
+      handleRegisterStudent(form);
       setForm(initialValue);
     }
   };
