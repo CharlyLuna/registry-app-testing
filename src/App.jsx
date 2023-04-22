@@ -15,7 +15,7 @@ function App() {
   const [form, setForm] = useState(initialValue);
 
   const { error, success } = useFormValidate(form);
-  const { handleRegisterStudent } = useRegisterStudent();
+  const { handleNewStudent } = useRegisterStudent();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,7 +24,7 @@ function App() {
       alert(error);
     } else {
       alert("all good");
-      handleRegisterStudent(form);
+      handleNewStudent(form);
       setForm(initialValue);
     }
   };

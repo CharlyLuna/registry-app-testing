@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 export const FormField = ({
   labelName,
   type,
@@ -32,4 +33,14 @@ export const FormField = ({
       />
     </div>
   );
+};
+
+FormField.propTypes = {
+  labelName: PropTypes.string,
+  type: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  value: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  maxLength: PropTypes.number,
 };
