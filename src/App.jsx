@@ -1,41 +1,8 @@
-import { useState } from "react";
 import { FormField } from "./components/FormField";
-import { useFormValidate } from "./hooks/useFormValidate";
-import { useRegisterStudent } from "./hooks/useRegisterStudent";
-
-const initialValue = {
-  name: "",
-  fLastName: "",
-  sLastName: "",
-  accountNumber: "",
-  gradeAndGroup: "",
-};
+import { useForm } from "./hooks/useForm";
 
 function App() {
-  const [form, setForm] = useState(initialValue);
-
-  const { error, success } = useFormValidate(form);
-  const { handleNewStudent } = useRegisterStudent();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (!success) {
-      alert(error);
-    } else {
-      alert("all good");
-      handleNewStudent(form);
-      setForm(initialValue);
-    }
-  };
-
-  const handleFieldChange = ({ target }) => {
-    const { value } = target;
-    setForm({
-      ...form,
-      [target.name]: value,
-    });
-  };
+  const { form, handleSubmit, handleFieldChange } = useForm();
 
   return (
     <div className='flex justify-center items-center h-screen w-screen'>
