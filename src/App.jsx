@@ -59,7 +59,7 @@ function App() {
             maxLength={2}
             handleChange={handleFieldChange}
           />
-          <button className='bg-indigo-600 p-4 mt-6 text-white font-bold hover:bg-blue-600' type='submit'>
+          <button className='bg-blue-700 p-4 mt-6 text-white font-bold hover:bg-blue-800' type='submit'>
             Registrar
           </button>
         </form>
