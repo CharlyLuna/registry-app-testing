@@ -33,7 +33,7 @@ export const useForm = () => {
   const checkValues = ({ accountNumber, gradeAndGroup }) => {
     // Validate account number are just numbers
     if (isNaN(Number(accountNumber)) || accountNumber.length < 8) {
-      setError("Account number is wrong, remember to use only numbers");
+      setError("The account number is wrong, remember to use only numbers");
       return;
     }
     // Validate grade is a number and group is a string in uppercase

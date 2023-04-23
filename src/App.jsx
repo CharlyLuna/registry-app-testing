@@ -6,16 +6,16 @@ function App() {
 
   return (
     <div className='flex justify-center items-center h-screen w-screen'>
-      <div className=' bg-gray-400 p-4'>
-        <h1 className='text-white text-sm'>Registro de asistencias</h1>
-        <form onSubmit={handleSubmit} className='flex flex-col gap-2'>
+      <div className='bg-gradient-to-r from-neutral-400 to-neutral-500 w-96 p-10'>
+        <h1 className='font-bold text-white text-xl text-center pb-7'>Registro de asistencias</h1>
+        <form onSubmit={handleSubmit} className='flex flex-col gap-6'>
           <FormField
             labelName='Nombre'
             type='text'
             id='name'
             name='name'
             value={form.name}
-            placeholder='Nombre del alumno'
+            placeholder='Elena'
             maxLength={20}
             handleChange={handleFieldChange}
           />
@@ -25,7 +25,7 @@ function App() {
             id='fLastName'
             name='fLastName'
             value={form.fLastName}
-            placeholder='Primer apellido'
+            placeholder='González'
             maxLength={11}
             handleChange={handleFieldChange}
           />
@@ -35,7 +35,7 @@ function App() {
             id='sLastName'
             name='sLastName'
             value={form.sLastName}
-            placeholder='Segundo apellido'
+            placeholder='Pérez'
             maxLength={11}
             handleChange={handleFieldChange}
           />
@@ -45,7 +45,7 @@ function App() {
             id='accountNumber'
             name='accountNumber'
             value={form.accountNumber}
-            placeholder='Número de cuenta'
+            placeholder='20201231'
             maxLength={8}
             handleChange={handleFieldChange}
           />
@@ -55,11 +55,11 @@ function App() {
             id='gradeAndGroup'
             name='gradeAndGroup'
             value={form.gradeAndGroup}
-            placeholder='Grado y grupo'
+            placeholder='2B'
             maxLength={2}
             handleChange={handleFieldChange}
           />
-          <button className='bg-black p-2 text-white' type='submit'>
+          <button className='bg-indigo-600 p-4 mt-6 text-white font-bold hover:bg-blue-600' type='submit'>
             Registrar
           </button>
         </form>
