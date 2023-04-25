@@ -7,31 +7,45 @@ export const Attendance = () => {
 
   return (
     <div>
-      <h1 className='text-lg text-center font-bold mb-2'>
+      <h1 className='text-xl text-center font-bold mb-2'>
         Alumnos registrados
       </h1>
       <hr />
-      <table className='table-auto m-auto w-1/2 justify-center self-center items-center'>
+      <table className='table-auto m-auto w-[80%] justify-center self-center items-center'>
         <thead>
-          <tr className='flex gap-10 justify-center mt-2 mb-2'>
-            <th className='w-full m-auto'>Nombre</th>
-            <th className='w-full m-auto'>Apellido paterno</th>
-            <th className='w-full m-auto'>Apellido materno</th>
-            <th className='w-full m-auto'>Grado y grupo</th>
-            <th className='w-full m-auto'>Asistencias</th>
+          <tr className='flex justify-center mt-2 mb-2'>
+            <th className='w-full mx-2 text-sm md:text-base'>Nombre</th>
+            <th className='w-full mx-2 text-sm md:text-base'>
+              Apellido paterno
+            </th>
+            <th className='w-full mx-2 text-sm md:text-base'>
+              Apellido materno
+            </th>
+            <th className='w-full mx-2 text-sm md:text-base'>Grado y grupo</th>
+            <th className='w-full mx-2 text-sm md:text-base'>Asistencias</th>
           </tr>
         </thead>
         <tbody>
           {registeredStudents.map((student, index) => (
             <tr
               key={`${student.accountNumber}_${index}`}
-              className='flex justify-center mt-2 mb-2 gap-10'
+              className='flex justify-center mt-2 mb-2'
             >
-              <td className='w-full text-center'>{student.name}</td>
-              <td className='w-full text-center'>{student.fLastName}</td>
-              <td className='w-full text-center'>{student.sLastName}</td>
-              <td className='w-full text-center'>{student.gradeAndGroup}</td>
-              <td className='w-full text-center'>{attendances[index]}</td>
+              <td className='w-full text-center mx-2 text-xs md:text-base'>
+                {student.name}
+              </td>
+              <td className='w-full text-center mx-2 text-xs md:text-base'>
+                {student.fLastName}
+              </td>
+              <td className='w-full text-center mx-2 text-xs md:text-base'>
+                {student.sLastName}
+              </td>
+              <td className='w-full text-center mx-2 text-xs md:text-base'>
+                {student.gradeAndGroup}
+              </td>
+              <td className='w-full text-center mx-2 text-xs md:text-base'>
+                {attendances[index]}
+              </td>
             </tr>
           ))}
         </tbody>
