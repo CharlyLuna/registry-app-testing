@@ -6,16 +6,16 @@ function App() {
   return (
     <BrowserRouter>
       <header
-        className='w-full flex justify-between items-center bg-white sm:px-8
+        className='w-full flex justify-between items-center bg-blue-100 sm:px-8
       px-4 py-4 border-b border-b-[#e6ebf4]'
       >
-        <Link to='/' className='text-xl font-semibold'>
-          Regisro de asistencias
+        <Link to='/' className='text-xl text-blue-800 font-bold hover:text-blue-900 hover:underline'>
+          Registro de asistencia
         </Link>
         <Link
           to='/attendance'
-          className='font-inter font-medium bg-[#6469ff]
-        text-white px-4 py-2 rounded-md'
+          className='font-inter font-medium bg-blue-700 hover:bg-blue-800
+        text-white px-4 py-2'
         >
           Revisar asistencias
         </Link>
