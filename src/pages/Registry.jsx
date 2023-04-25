@@ -6,9 +6,9 @@ export const Registry = () => {
 
   return (
     <div className='flex justify-center items-center pt-8'>
-      <div className='bg-gradient-to-r from-neutral-400 to-neutral-500 w-96 p-10'>
-        <h1 className='font-bold text-white text-xl text-center pb-7'>
-          Registro de asistencias
+      <div className='bg-gradient-to-r from-neutral-400 to-neutral-300 w-96 p-10'>
+        <h1 className='font-bold text-black text-xl text-center pb-7'>
+          Registra aquí al alumno
         </h1>
         <form onSubmit={handleSubmit} className='flex flex-col gap-6'>
           <FormField
