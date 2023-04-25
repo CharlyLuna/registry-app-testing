@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { useRegisterStudent } from "./useRegisterStudent";
-import { VALID_GROUPS, VALID_GRADES } from "../utils/constants";
+import {
+  VALID_GROUPS,
+  VALID_GRADES,
+  checkIfStudentExists,
+} from "../utils/constants";
 
 const initialValue = {
   name: "",
@@ -13,7 +17,7 @@ const initialValue = {
 export const useForm = () => {
   const [form, setForm] = useState(initialValue);
   const [error, setError] = useState("");
-  const { handleNewStudent } = useRegisterStudent();
+  const { handleNewStudent, registeredStudents } = useRegisterStudent();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,10 +33,19 @@ export const useForm = () => {
 
   useEffect(() => {
     setError("");
-    checkValues({ ...form });
-  }, [form]);
+    checkValues({ ...form, registeredStudents });
+  }, [form, registeredStudents]);
 
-  const checkValues = ({ accountNumber, gradeAndGroup }) => {
+  const checkValues = ({
+    accountNumber,
+    gradeAndGroup,
+    registeredStudents,
+  }) => {
+    // Validate the student doesnt exists
+    if (checkIfStudentExists(accountNumber, registeredStudents)) {
+      setError("The account number is already registered");
+      return;
+    }
     // Validate account number are just numbers
     if (isNaN(Number(accountNumber)) || accountNumber.length < 8) {
       setError("The account number is not valid, remember to use only numbers");
